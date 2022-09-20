@@ -7,7 +7,7 @@ interface IslandHeaderProps {
 export default function InnerSongDetails(props: IslandHeaderProps) {
   return (
     <motion.div
-      className="grid justify-center items-center grid-rows-2 grid-cols-1"
+      className="grid justify-center items-center gap-1 grid-cols-1 grid-rows-2"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >

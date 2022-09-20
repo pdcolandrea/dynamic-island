@@ -2,9 +2,11 @@ import classNames from "classnames";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import AlbumArt from "./AlbumArt";
+import ControlsWrapper from "./ControlsWrapper";
 import InnerSongDetails from "./InnerSongDetails";
 import IslandBody from "./IslandBody";
 import IslandHeader from "./IslandHeader";
+import Playbar from "./Playbar";
 
 export default function DynamicIsland() {
   const [isIslandOpen, setIslandOpen] = useState(false);
@@ -44,6 +46,16 @@ export default function DynamicIsland() {
           />
         </motion.div>
       </IslandHeader>
+
+      {isIslandOpen && (
+        <>
+          <ControlsWrapper>
+            <span>2:30</span>
+            <Playbar />
+            <span>-1:35</span>
+          </ControlsWrapper>
+        </>
+      )}
     </IslandBody>
   );
 }

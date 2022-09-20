@@ -11,8 +11,10 @@ export default function IslandHeader(props: IslandHeaderProps) {
   return (
     <motion.div
       className={classNames(
-        "grid grid-cols-3 justify-center w-full",
-        isOpen ? "items-start" : "items-center"
+        "grid justify-center w-full gap-4",
+        isOpen
+          ? "items-start grid-cols-[48px_1fr_12px]"
+          : "items-center grid-cols-[12px_1fr_12px]"
       )}
     >
       {children}
