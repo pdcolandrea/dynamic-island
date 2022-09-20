@@ -25,7 +25,7 @@ export default function IslandBody(props: IslandBodyProps) {
   return (
     <motion.div
       className={classNames(
-        "rounded-lg bg-applePurp text-white text-xs grid cursor-pointer w-fit",
+        "rounded-lg bg-black text-white text-xs grid cursor-pointer w-fit",
         isOpen ? "items-start p-6 grid-rows-3" : "items-center"
       )}
       animate={isOpen ? "open" : "closed"}

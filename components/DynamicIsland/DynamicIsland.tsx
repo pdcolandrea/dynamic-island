@@ -5,12 +5,8 @@ import AlbumArt from "./AlbumArt";
 import InnerSongDetails from "./InnerSongDetails";
 import IslandBody from "./IslandBody";
 import IslandHeader from "./IslandHeader";
-import MusicBar from "./MusicBar";
 
-interface DynamicIslandProps {
-  isOpen: boolean;
-}
-export default function DynamicIsland(props: DynamicIslandProps) {
+export default function DynamicIsland() {
   const [isIslandOpen, setIslandOpen] = useState(false);
 
   const onIslandClicked = () => {
@@ -28,9 +24,24 @@ export default function DynamicIsland(props: DynamicIslandProps) {
           className="w-3 h-3 grid justify-center items-center grid-cols-3 gap-1"
           animate={{ opacity: isIslandOpen ? [0, 1] : 1 }}
         >
-          <MusicBar />
-          <MusicBar />
-          <MusicBar />
+          <motion.div
+            initial={{ height: "0" }}
+            animate={{ height: "100%" }}
+            transition={{ duration: 1, delay: 0.5, repeat: Infinity }}
+            className="w-full h-full rounded-sm bg-gradient-to-r from-applePurp to-applePurpAlt"
+          />
+          <motion.div
+            initial={{ height: "0" }}
+            animate={{ height: "100%" }}
+            transition={{ duration: 1, delay: 0.75, repeat: Infinity }}
+            className="w-full h-full rounded-sm bg-gradient-to-r from-applePurp to-applePurpAlt"
+          />
+          <motion.div
+            initial={{ height: "0" }}
+            animate={{ height: "75%" }}
+            transition={{ duration: 1, delay: 0.3, repeat: Infinity }}
+            className="w-full h-full rounded-sm bg-gradient-to-r from-applePurp to-applePurpAlt"
+          />
         </motion.div>
       </IslandHeader>
     </IslandBody>
